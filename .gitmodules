@@ -1,0 +1,3 @@
+[submodule "input/COVID-19"]
+	path = input/COVID-19
+	url = https://github.com/CSSEGISandData/COVID-19
