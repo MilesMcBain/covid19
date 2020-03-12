@@ -8,7 +8,7 @@ the_plan <-
    doubling_rates_plot  = plot_doubling_rates(doubling_rates),
 
    output_image = ggsave(file_out("COVID19_doubling_rates.png"),
-                         plot = doubling_rates_plott ,
+                         plot = doubling_rates_plot ,
                          device = ragg::agg_png,
                          width = 8,
                          height = 8,

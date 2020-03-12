@@ -11,3 +11,4 @@ library(gghighlight)
 library(ragg)
 
 conflict_prefer("filter", "dplyr")
+conflict_prefer("lag", "dplyr")
