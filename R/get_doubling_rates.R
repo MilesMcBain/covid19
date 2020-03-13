@@ -25,11 +25,18 @@ get_doubling_rates <- function(cases_df) {
     mutate(time_to_double = as.numeric(max(lead_date) - min(date),
                                        units = "days")) %>%
     ## lead_date is the date of change
+    ungroup() %>%
+    group_by(country_region) %>%
+    mutate(double_target = min(cases) * 2^n_double) %>%
+    group_by(country_region, n_double) %>%
     summarise(
       time_to_double = max(time_to_double),
-      cases = min(cases)
+      cases = min(cases),
+      double_target = min(double_target)
     ) %>%
-    drop_na(time_to_double)
+      drop_na(time_to_double) %>%
+    ungroup()
+
     ## NAs occur in the final rows for each country, where we're still counting
     ## toward the next double.
 

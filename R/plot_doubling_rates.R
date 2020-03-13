@@ -19,7 +19,7 @@ plot_doubling_rates <- function(doubling_rates) {
   p <-
     doubling_rates %>%
     drop_na(continent) %>%
-    ggplot(aes(x = cases,
+    ggplot(aes(x = double_target,
                y = jitter(time_to_double),
                colour = country_region)) +
     geom_line() +
@@ -29,21 +29,21 @@ plot_doubling_rates <- function(doubling_rates) {
       y = "days",
       x = "from number of cases"
     ) +
-    scale_x_log10(labels = scales::comma) +
+    scale_x_continuous(trans = "log2", labels = scales::comma) +
     theme_minimal() +
     facet_wrap(~ continent, ncol = 2) +
     gghighlight(
       country_region %in% c(
-        "China",
+        "Mainland China",
         "Singapore",
         "Japan",
-        "Iran",
+        "Iran (Islamic Republic of)",
         "Italy",
         "US",
-        "United Kingdom",
+        "UK",
         "Australia",
         "France",
-        "Korea, South"
+        "Republic of Korea"
       ),
       label_params = list(size = 2,
                           nudge_y = 10,
