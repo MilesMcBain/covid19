@@ -4,6 +4,10 @@
 
 ![](./COVID19_doubling_rates.png)
 
+### Australian State Case Doubling Rate
+
+![](./COVID19_doubling_rates_aus.png)
+
 ## Source Data
 The source data for this modeling comes from a git repository which is
 initialised as a submodule in `./input/COVID-19`. To update run:
