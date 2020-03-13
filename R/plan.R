@@ -5,17 +5,16 @@ the_plan <-
 
    doubling_rates = get_doubling_rates(cases_df),
 
+   doubling_rates_aus = get_doubling_rates_aus(cases_df),
+
    doubling_rates_plot  = plot_doubling_rates(doubling_rates),
 
-   output_image = ggsave(file_out("COVID19_doubling_rates.png"),
-                         plot = doubling_rates_plot,
-                         device = ragg::agg_png,
-                         width = 8,
-                         height = 8,
-                         res = 200)
+   doubling_rates_plot_aus = plot_doubline_rates_aus(doubling_rates_aus),
 
+   output_image = save_plot(file_out("COVID19_doubling_rates.png"),
+                            doubling_rates_plot),
 
-
-
+   output_image_aus = save_plot(file_out("COVID19_doubling_rates_aus.png"),
+                                doubling_rates_plot_aus)
 
 )
