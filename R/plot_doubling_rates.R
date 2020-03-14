@@ -34,16 +34,17 @@ plot_doubling_rates <- function(doubling_rates) {
     facet_wrap(~ continent, ncol = 2) +
     gghighlight(
       country_region %in% c(
-        "Mainland China",
+        "China",
         "Singapore",
         "Japan",
-        "Iran (Islamic Republic of)",
+        "Iran",
         "Italy",
+        "Spain",
         "US",
-        "UK",
+        "United Kingdom",
         "Australia",
         "France",
-        "Republic of Korea"
+        "Korea, South"
       ),
       label_params = list(size = 2,
                           nudge_y = 10,
