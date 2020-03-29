@@ -11,7 +11,7 @@ get_total_cases <- function() {
 
   cases <-
     read_csv(
-      file_in("./input/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"),
+      file_in("./input/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"),
       col_types =
         cols(
           .default = col_double(),
